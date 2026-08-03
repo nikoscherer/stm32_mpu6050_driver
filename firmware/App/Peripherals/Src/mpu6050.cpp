@@ -32,7 +32,7 @@ MPU6050Status MPU6050::read(MPU6050Data& data) {
 
   data.temperature_data =
       static_cast<int16_t>((uint16_t)((rx_buffer[6] << 8) | rx_buffer[7])) /
-          340 +
+          340.0 +
       36.53;  // TEMP_OUT_H, TEMP_OUT_L
 
   data.gyroscope_data[0] = static_cast<int16_t>(

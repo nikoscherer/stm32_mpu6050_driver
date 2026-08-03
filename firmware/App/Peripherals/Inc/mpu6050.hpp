@@ -27,7 +27,7 @@ class MPU6050 {
 
   MPU6050Status setPowerMode(
       MPU6050PowerMode power_mode,
-      MPU6050TemperatureSensorMode* temperature_sensor_mode);
+      MPU6050TemperatureSensorMode* temperature_sensor_mode = nullptr);
 
   static inline float accelToGs(int16_t raw_value) {
     return static_cast<float>(raw_value) / kAccelScale2G;
